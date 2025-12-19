@@ -59,17 +59,52 @@
             </div>
         </div>
 
-        <div class="tm-section tm-bg-img" id="tm-section-1" style="min-height: 515px;">
+<!--        <div class="tm-section tm-bg-img" id="tm-section-1" style="min-height: 515px;">
             <div class="overlay">
-                <h1 class="tm-section-title tm-color-white">Welcome!</h1>
+                <h1 class="tm-section-title tm-color-white">INGENIERIA ELECTRONICA</h1>
             </div>
         </div>
+-->
+  <div class="tm-section tm-bg-img" id="tm-section-1" style="min-height: 515px;">
+    <!-- Overlay con el título -->
+    <div class="overlay">
+        <h1 class="tm-section-title tm-color-white">INGENIERIA ELECTRONICA</h1>
+    </div>
 
+    <!-- Slider de imágenes -->
+    <div id="slider" class="slider-container">
+        <div class="slide active">
+            <img src="SlidersVacio/Slider1.jpg" alt="Imagen 1">
+        </div>
+        <div class="slide">
+            <img src="SlidersVacio/Slider2.jpg" alt="Imagen 2">
+        </div>
+        <div class="slide">
+            <img src="SlidersVacio/Slider3.jpg" alt="Imagen 3">
+        </div>
+        <div class="slide">
+            <img src="SlidersVacio/Slider4.jpg" alt="Imagen 4">
+        </div>
+
+        <!-- Controles -->
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+
+        <!-- Indicadores -->
+        <div class="dots">
+            <span class="dot active" onclick="setSlide(0)"></span>
+            <span class="dot" onclick="setSlide(1)"></span>
+            <span class="dot" onclick="setSlide(2)"></span>
+            <span class="dot" onclick="setSlide(3)"></span>
+        </div>
+    </div>
+</div>
+<!------------------------------------------------------------------------------------------>
         <div class="tm-section-2" id="tm-section-2">
             <div class="container">
                 <div class="row">
                     <div class="col text-center" style="padding-top: 50px; padding-bottom: 50px;">
-                        <h2 class="tm-section-title">Empty Section 2</h2>
+                        <h2 class="tm-section-title">INGENIERIA ELECTRONICA</h2>
                         <p class="tm-color-white tm-section-subtitle">Add your content here</p>
                     </div>
                 </div>
@@ -195,11 +230,46 @@
             script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDVWt4rJfibfsEDvcuaChUaZRS5NXey1Cs&v=3.exp&sensor=false&' + 'callback=initialize';
             document.body.appendChild(script);
         }
+// ------------------------------------------------------------------
+//  Slider Ismael
+//---------------------------------------------------------------------
+  function setCarousel() {
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('#slider .slide');
+    const dots = document.querySelectorAll('#slider .dot');
 
-        function setCarousel() {
-            // Original logic removed to empty template.
-        }
+    function showSlide(index) {
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+        currentSlide = index;
 
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === currentSlide);
+        });
+
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentSlide);
+        });
+    }
+
+    // Hacer accesibles las funciones desde HTML
+    window.changeSlide = function(step) {
+        showSlide(currentSlide + step);
+    };
+
+    window.setSlide = function(index) {
+        showSlide(index);
+    };
+
+    // Mostrar la primera diapositiva
+    showSlide(0);
+
+    // Auto‑play opcional
+    setInterval(() => {
+        showSlide(currentSlide + 1);
+    }, 5000);
+}
+// Fin Slider --------------------------------------------------------
         function setPageNav(){
             if($(window).width() > 991) {
                 $('#tm-top-bar').singlePageNav({
