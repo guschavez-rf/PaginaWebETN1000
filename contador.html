@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Level HTML Template by Tooplate - Empty Template</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="css/datepicker.css"/>
+    <link rel="stylesheet" href="css/tooplate-style.css">
+
+    <style>
+        .visitor-counter {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            margin: 20px auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .counter-label {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .counter-number {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 15px 0;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .counter-description {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-top: 15px;
+        }
+
+        .reset-counter {
+            margin-top: 15px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: background 0.3s;
+        }
+
+        .reset-counter:hover {
+            background: rgba(255,255,255,0.3);
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+
+    </head>
+
+<body>
+    <div class="tm-main-content" id="top">
+        <div class="tm-top-bar-bg"></div>
+        <div class="tm-top-bar" id="tm-top-bar">
+            <div class="container">
+                <div class="row">
+
+                    <nav class="navbar navbar-expand-lg narbar-light">
+                        <a class="navbar-brand mr-auto" href="#">
+                            <img src="img/logo.png" alt="Site logo">
+                            Level
+                        </a>
+                        <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div id="mainNav" class="collapse navbar-collapse tm-bg-white">
+                            <ul class="navbar-nav ml-auto">
+                              <li class="nav-item">
+                                <a class="nav-link" href="#top">Home <span class="sr-only">(current)</span></a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#tm-section-2">Section 2</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#tm-section-3">Section 3</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#tm-section-4">Portfolio</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#tm-section-5">Blog Entries</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#tm-section-6">Contact Us</a>
+                              </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="tm-section tm-bg-img" id="tm-section-1" style="min-height: 515px;">
+            <div class="overlay">
+                <h1 class="tm-section-title tm-color-white">Welcome!</h1>
+            </div>
+        </div>
+
+        <div class="tm-section-2" id="tm-section-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center" style="padding-top: 50px; padding-bottom: 50px;">
+                        <h2 class="tm-section-title">Empty Section 2</h2>
+                        <p class="tm-color-white tm-section-subtitle">Add your content here</p>
+                        
+                        <!-- CONTADOR DE VISITAS -->
+                        <div class="visitor-counter">
+                            <div class="counter-label">👥 Contador de Visitas</div>
+                            <div class="counter-number" id="visitCount">0</div>
+                            <div class="counter-description">personas han visitado esta página</div>
+                            <button class="reset-counter" onclick="resetCounter()">Reiniciar contador</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tm-section tm-position-relative" id="tm-section-3">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" class="tm-section-down-arrow">
+                <polygon fill="#ee5057" points="0,0  100,0  50,60"></polygon>
+            </svg>
+            <div class="container tm-pt-5 tm-pb-4">
+                <div class="row text-center" style="min-height: 250px;">
+                    <div class="col-12">
+                        <h2 class="tm-color-primary">Empty Section 3</h2>
+                        <p>Add your main articles here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tm-section tm-section-pad tm-bg-gray" id="tm-section-4">
+            <div class="container">
+                <div class="row" style="min-height: 250px;">
+                    <div class="col-12 text-center">
+                        <h2>Empty Portfolio Section (Section 4)</h2>
+                        <p>Carousel and sidebar content goes here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tm-bg-video">
+            <div class="tm-section tm-section-pad tm-bg-img" id="tm-section-5" style="min-height: 515px;">
+                <div class="container ie-h-align-center-fix">
+                    <div class="row tm-flex-align-center" style="min-height: 450px;">
+                        <div class="col-12 text-center">
+                            <h2 class="text-uppercase tm-section-title-2 tm-color-white">Empty Blog Section (Section 5)</h2>
+                            <h3 class="tm-color-primary tm-font-semibold tm-section-subtitle-2">Media objects go here</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tm-section tm-section-pad tm-bg-img tm-position-relative" id="tm-section-6">
+            <div class="container ie-h-align-center-fix">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-7">
+                        <div id="google-map"></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-5 mt-3 mt-md-0">
+                        <div class="tm-bg-white tm-p-4">
+                            <form action="index.html" method="post" class="contact-form">
+                                <div class="form-group">
+                                    <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name"  required/>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Email"  required/>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="contact_subject" name="contact_subject" class="form-control" placeholder="Subject"  required/>
+                                </div>
+                                <div class="form-group">
+                                    <textarea id="contact_message" name="contact_message" class="form-control" rows="9" placeholder="Message" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary tm-btn-primary">Send Message Now</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="tm-bg-dark-blue">
+            <div class="container">
+                <div class="row">
+                    <p class="col-sm-12 text-center tm-font-light tm-color-white p-4 tm-margin-b-0">
+                    Copyright &copy; <span class="tm-current-year">2018</span> Your Company
+
+                    - Design: <a rel="nofollow" href="https://www.tooplate.com" class="tm-color-primary tm-font-normal" target="_parent">Tooplate</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/datepicker.min.js"></script>
+    <script src="js/jquery.singlePageNav.min.js"></script>
+    <script src="slick/slick.min.js"></script>
+    <script>
+        /* Google map
+        ------------------------------------------------*/
+        var map = '';
+        var center;
+
+        function initialize() {
+            var mapOptions = {
+                zoom: 13,
+                center: new google.maps.LatLng(-23.013104,-43.394365),
+                scrollwheel: false
+            };
+
+            map = new google.maps.Map(document.getElementById('google-map'),  mapOptions);
+
+            google.maps.event.addDomListener(map, 'idle', function() {
+              calculateCenter();
+          });
+
+            google.maps.event.addDomListener(window, 'resize', function() {
+              map.setCenter(center);
+          });
+        }
+
+        function calculateCenter() {
+            center = map.getCenter();
+        }
+
+        function loadGoogleMap(){
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDVWt4rJfibfsEDvcuaChUaZRS5NXey1Cs&v=3.exp&sensor=false&' + 'callback=initialize';
+            document.body.appendChild(script);
+        }
+
+        function setCarousel() {
+            // Original logic removed to empty template.
+        }
+
+        function setPageNav(){
+            if($(window).width() > 991) {
+                $('#tm-top-bar').singlePageNav({
+                    currentClass:'active',
+                    offset: 79
+                });
+            }
+            else {
+                $('#tm-top-bar').singlePageNav({
+                    currentClass:'active',
+                    offset: 65
+                });
+            }
+        }
+
+        function togglePlayPause() {
+            // Original video logic removed to empty template.
+        }
+
+        /* Contador de visitas
+        ------------------------------------------------*/
+        function updateVisitCounter() {
+            let visits = localStorage.getItem('visitCount');
+            visits = visits ? parseInt(visits) + 1 : 1;
+            localStorage.setItem('visitCount', visits);
+            document.getElementById('visitCount').textContent = visits;
+        }
+
+        function resetCounter() {
+            if(confirm('¿Estás seguro de que deseas reiniciar el contador?')) {
+                localStorage.setItem('visitCount', '0');
+                document.getElementById('visitCount').textContent = '0';
+            }
+        }
+
+        $(document).ready(function(){
+
+            $(window).on("scroll", function() {
+                if($(window).scrollTop() > 100) {
+                    $(".tm-top-bar").addClass("active");
+                } else {
+                   $(".tm-top-bar").removeClass("active");
+                }
+            });
+
+            // Google Map
+            loadGoogleMap();
+
+            // Date Picker (Logic removed as form is empty, keeping variables just in case)
+            // const pickerCheckIn = datepicker('#inputCheckIn');
+            // const pickerCheckOut = datepicker('#inputCheckOut');
+
+            // Slick carousel (Function call kept, but content is empty)
+            setCarousel();
+            setPageNav();
+
+            $(window).resize(function() {
+              setCarousel();
+              setPageNav();
+            });
+
+            // Close navbar after clicked
+            $('.nav-link').click(function(){
+                $('#mainNav').removeClass('show');
+            });
+
+            // Control video (Logic removed)
+            // $('.tm-btn-play').click(function() { togglePlayPause(); });
+            // $('.tm-btn-pause').click(function() { togglePlayPause(); });
+
+            // Update the current year in copyright
+            $('.tm-current-year').text(new Date().getFullYear());
+
+            // Inicializar contador de visitas
+            updateVisitCounter();
+        });
+
+    </script>
+
+</body>
+</html>
