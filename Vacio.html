@@ -14,7 +14,37 @@
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <link rel="stylesheet" type="text/css" href="css/datepicker.css"/>
     <link rel="stylesheet" href="css/tooplate-style.css">
+<!-- ESTILOS RESPONSIVOS -->
+<style>
+    @media (max-width: 768px) {
+        h2[style*="font-size: 2.5rem"] {
+            font-size: 1.8rem !important;
+        }
+        
+        h3[style*="font-size: 1.8rem"] {
+            font-size: 1.3rem !important;
+        }
 
+        [style*="display: flex"] {
+            flex-direction: column !important;
+            gap: 10px !important;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h2[style*="font-size: 2.5rem"] {
+            font-size: 1.5rem !important;
+        }
+
+        [style*="font-size: 2.5rem"] {
+            font-size: 1.8rem !important;
+        }
+
+        [style*="padding: 30px"] {
+            padding: 20px !important;
+        }
+    }
+</style>
     <style>
         /* ===== CONTADOR DE VISITAS ===== */
         .visitor-counter {
@@ -259,6 +289,178 @@
             padding: 40px 20px;
         }
 
+        /* ===== SECCIÓN DE DESARROLLADORES ===== */
+        .developers-section {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .developers-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        .developers-title h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .developers-title p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .developers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .developer-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .developer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+        }
+
+        .developer-avatar {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            color: white;
+        }
+
+        .developer-info {
+            padding: 30px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .developer-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .developer-role {
+            font-size: 1rem;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .developer-description {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .developer-skills {
+            margin-bottom: 20px;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 3px;
+            margin-bottom: 10px;
+        }
+
+        .developer-contact {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+
+        .contact-icon.whatsapp {
+            background: #25D366;
+        }
+
+        .contact-icon.whatsapp:hover {
+            background: #20BA5A;
+            transform: scale(1.1);
+        }
+
+        .contact-icon.email {
+            background: #FF6B6B;
+        }
+
+        .contact-icon.email:hover {
+            background: #FF5252;
+            transform: scale(1.1);
+        }
+
+        .contact-icon.linkedin {
+            background: #0A66C2;
+        }
+
+        .contact-icon.linkedin:hover {
+            background: #085399;
+            transform: scale(1.1);
+        }
+
+        .cv-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cv-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(102, 126, 234, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             .countdown-boxes {
                 grid-template-columns: repeat(2, 1fr);
@@ -279,8 +481,83 @@
             .counter-number {
                 font-size: 36px;
             }
+
+            .developers-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 0 15px;
+            }
+
+            .developers-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .developers-title p {
+                font-size: 0.95rem;
+            }
+
+            .developer-avatar {
+                height: 200px;
+                font-size: 60px;
+            }
+
+            .developer-info {
+                padding: 20px;
+            }
+
+            .developer-name {
+                font-size: 1.2rem;
+            }
+
+            .developer-role {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .developer-card {
+                margin: 0 10px;
+            }
+
+            .countdown-boxes {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .countdown-value {
+                font-size: 24px;
+            }
+
+            .counter-number {
+                font-size: 28px;
+            }
+
+            .visitor-counter,
+            .countdown-container {
+                max-width: 100%;
+                margin: 15px 10px;
+                padding: 20px;
+            }
         }
     </style>
+    <!-- ESTILOS RESPONSIVOS ADICIONALES -->
+<style>
+    @media (max-width: 768px) {
+        .col-md-6, .col-lg-4 {
+            margin-bottom: 20px !important;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h2[style*="font-size: 2.5rem"] {
+            font-size: 1.8rem !important;
+        }
+        
+        h3[style*="font-size: 1.3rem"] {
+            font-size: 1.1rem !important;
+        }
+    }
+</style>
+
 
 </head>
 
@@ -301,22 +578,22 @@
                         <div id="mainNav" class="collapse navbar-collapse tm-bg-white">
                             <ul class="navbar-nav ml-auto">
                               <li class="nav-item">
-                                <a class="nav-link" href="#top">Home <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="#top">Home</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#tm-section-2">Section 2</a>
+                                <a class="nav-link" href="#tm-section-2">Monitoreo</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#tm-section-3">Section 3</a>
+                                <a class="nav-link" href="#tm-section-3">Contenido</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#tm-section-4">Portfolio</a>
+                                <a class="nav-link" href="#tm-section-4">Desarrolladores</a>
                               </li>
                               <li class="nav-item">
                                 <a class="nav-link" href="#tm-section-5">Blog</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#tm-section-6">Contact</a>
+                                <a class="nav-link" href="#tm-section-6">Contacto</a>
                               </li>
                             </ul>
                         </div>
@@ -365,7 +642,6 @@
                         <h2 class="tm-section-title">SISTEMAS Y HERRAMIENTAS</h2>
                         <p class="tm-color-white tm-section-subtitle">Monitoreo del Sitio Web y Datos del Curso</p>
                         
-                        <!-- CONTENEDOR FLEX PARA LOS CONTADORES -->
                         <div class="counters-container">
                             <!-- CONTADOR DE VISITAS -->
                             <div class="visitor-counter">
@@ -404,45 +680,541 @@
             </div>
         </div>
 
-        <!-- SECCIONES RESTANTES -->
-        <div class="tm-section tm-position-relative" id="tm-section-3">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" class="tm-section-down-arrow">
-                <polygon fill="#ee5057" points="0,0  100,0  50,60"></polygon>
-            </svg>
-            <div class="container tm-pt-5 tm-pb-4">
-                <div class="row text-center" style="min-height: 250px;">
-                    <div class="col-12">
-                        <h2 class="tm-color-primary">Sección de Contenido</h2>
-                        <p>Agrega tus artículos principales aquí</p>
-                    </div>
+<!-- SECCIÓN DE CONTENIDO -->
+<div class="tm-section tm-position-relative" id="tm-section-3" style="padding: 80px 20px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" class="tm-section-down-arrow">
+        <polygon fill="#ee5057" points="0,0  100,0  50,60"></polygon>
+    </svg>
+    
+    <div class="container">
+        <!-- TÍTULO PRINCIPAL -->
+        <div class="row text-center" style="margin-bottom: 60px;">
+            <div class="col-12">
+                <h2 style="color: #667eea; font-size: 2.5rem; font-weight: bold; margin-bottom: 15px;">
+                    📚 Ingeniería Electrónica
+                </h2>
+                <p style="color: #666; font-size: 1.1rem; margin-bottom: 10px;">
+                    Información principal sobre la disciplina y sus aplicaciones
+                </p>
+                <div style="width: 80px; height: 4px; background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); margin: 20px auto;"></div>
+            </div>
+        </div>
+
+        <!-- GRID DE CONTENIDO -->
+        <div class="row" style="margin-bottom: 60px;">
+            <!-- TARJETA 1: ¿QUÉ ES? -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: all 0.3s; height: 100%;"
+                     onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.15)';"
+                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 20px rgba(0,0,0,0.1)';">
+                    
+                    <div style="font-size: 50px; margin-bottom: 15px; text-align: center;">⚡</div>
+                    
+                    <h3 style="color: #667eea; font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; text-align: center;">
+                        ¿Qué es Ingeniería Electrónica?
+                    </h3>
+                    
+                    <p style="color: #666; font-size: 0.95rem; line-height: 1.7; text-align: justify;">
+                        La Ingeniería Electrónica es la rama de la ingeniería que se dedica al estudio, diseño, desarrollo y aplicación de dispositivos y sistemas que funcionan con corriente eléctrica. Combina principios de la física, matemáticas y tecnología para crear soluciones innovadoras.
+                    </p>
+                </div>
+            </div>
+
+            <!-- TARJETA 2: ÁREAS DE ESPECIALIZACIÓN -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: all 0.3s; height: 100%;"
+                     onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.15)';"
+                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 20px rgba(0,0,0,0.1)';">
+                    
+                    <div style="font-size: 50px; margin-bottom: 15px; text-align: center;">🎯</div>
+                    
+                    <h3 style="color: #f5576c; font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; text-align: center;">
+                        Áreas de Especialización
+                    </h3>
+                    
+                    <ul style="color: #666; font-size: 0.95rem; line-height: 2; list-style: none; padding: 0;">
+                        <li><i class="fa fa-check" style="color: #f5576c; margin-right: 10px;"></i> Electrónica de Potencia</li>
+                        <li><i class="fa fa-check" style="color: #f5576c; margin-right: 10px;"></i> Sistemas Embebidos</li>
+                        <li><i class="fa fa-check" style="color: #f5576c; margin-right: 10px;"></i> Telecomunicaciones</li>
+                        <li><i class="fa fa-check" style="color: #f5576c; margin-right: 10px;"></i> Automatización Industrial</li>
+                        <li><i class="fa fa-check" style="color: #f5576c; margin-right: 10px;"></i> IoT y Conectividad</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TARJETA 3: APLICACIONES -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: all 0.3s; height: 100%;"
+                     onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.15)';"
+                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 20px rgba(0,0,0,0.1)';">
+                    
+                    <div style="font-size: 50px; margin-bottom: 15px; text-align: center;">🌍</div>
+                    
+                    <h3 style="color: #4facfe; font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; text-align: center;">
+                        Aplicaciones en la Industria
+                    </h3>
+                    
+                    <ul style="color: #666; font-size: 0.95rem; line-height: 2; list-style: none; padding: 0;">
+                        <li><i class="fa fa-star" style="color: #4facfe; margin-right: 10px;"></i> Medicina y Salud</li>
+                        <li><i class="fa fa-star" style="color: #4facfe; margin-right: 10px;"></i> Energía y Potencia</li>
+                        <li><i class="fa fa-star" style="color: #4facfe; margin-right: 10px;"></i> Transporte y Movilidad</li>
+                        <li><i class="fa fa-star" style="color: #4facfe; margin-right: 10px;"></i> Entretenimiento</li>
+                        <li><i class="fa fa-star" style="color: #4facfe; margin-right: 10px;"></i> Manufactura Inteligente</li>
+                    </ul>
                 </div>
             </div>
         </div>
 
-        <div class="tm-section tm-section-pad tm-bg-gray" id="tm-section-4">
-            <div class="container">
-                <div class="row" style="min-height: 250px;">
-                    <div class="col-12 text-center">
-                        <h2>Portafolio</h2>
-                        <p>Tus proyectos y trabajos realizados</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- SECCIÓN DE HABILIDADES Y COMPETENCIAS -->
+        <div class="row" style="margin-bottom: 60px;">
+            <div class="col-12">
+                <h3 style="color: #333; font-size: 1.8rem; font-weight: bold; margin-bottom: 30px; text-align: center;">
+                    🛠️ Competencias Clave del Ingeniero Electrónico
+                </h3>
 
-        <div class="tm-bg-video">
-            <div class="tm-section tm-section-pad tm-bg-img" id="tm-section-5" style="min-height: 515px;">
-                <div class="container ie-h-align-center-fix">
-                    <div class="row tm-flex-align-center" style="min-height: 450px;">
-                        <div class="col-12 text-center">
-                            <h2 class="text-uppercase tm-section-title-2 tm-color-white">Blog y Noticias</h2>
-                            <h3 class="tm-color-primary tm-font-semibold tm-section-subtitle-2">Últimas publicaciones</h3>
+                <div class="row">
+                    <!-- HABILIDAD 1 -->
+                    <div class="col-md-4 mb-4">
+                        <div style="background: white; border-left: 5px solid #667eea; padding: 20px; border-radius: 8px; box-shadow: 0 3px 15px rgba(0,0,0,0.08);">
+                            <h4 style="color: #667eea; font-weight: bold; margin-bottom: 12px;">
+                                <i class="fa fa-code"></i> Programación y Control
+                            </h4>
+                            <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">
+                                Dominio en lenguajes de programación como C, C++, Python y Arduino para controlar sistemas electrónicos.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- HABILIDAD 2 -->
+                    <div class="col-md-4 mb-4">
+                        <div style="background: white; border-left: 5px solid #f5576c; padding: 20px; border-radius: 8px; box-shadow: 0 3px 15px rgba(0,0,0,0.08);">
+                            <h4 style="color: #f5576c; font-weight: bold; margin-bottom: 12px;">
+                                <i class="fa fa-cogs"></i> Diseño y Simulación
+                            </h4>
+                            <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">
+                                Uso de herramientas CAD y simulación como MATLAB, Simulink, LTSpice para prototipos y análisis.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- HABILIDAD 3 -->
+                    <div class="col-md-4 mb-4">
+                        <div style="background: white; border-left: 5px solid #4facfe; padding: 20px; border-radius: 8px; box-shadow: 0 3px 15px rgba(0,0,0,0.08);">
+                            <h4 style="color: #4facfe; font-weight: bold; margin-bottom: 12px;">
+                                <i class="fa fa-flask"></i> Análisis Técnico
+                            </h4>
+                            <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">
+                                Capacidad para analizar circuitos, resolver problemas complejos y optimizar sistemas electrónicos.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- SECCIÓN DE ESTADÍSTICAS -->
+        <div class="row" style="background: white; border-radius: 12px; padding: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); margin-bottom: 60px;">
+            <div class="col-12" style="text-align: center; margin-bottom: 30px;">
+                <h3 style="color: #333; font-size: 1.8rem; font-weight: bold;">
+                    📈 Datos de la Carrera
+                </h3>
+            </div>
+
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: bold; color: #667eea;">8</div>
+                    <p style="color: #666; font-weight: 600; margin-top: 10px;">Semestres de Duración</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: bold; color: #f5576c;">95%</div>
+                    <p style="color: #666; font-weight: 600; margin-top: 10px;">Tasa de Empleo</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: bold; color: #4facfe;">50+</div>
+                    <p style="color: #666; font-weight: 600; margin-top: 10px;">Empresas Aliadas</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: bold; color: #a8edea;">1000+</div>
+                    <p style="color: #666; font-weight: 600; margin-top: 10px;">Egresados Satisfechos</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN DE LLAMADA A ACCIÓN -->
+        <div class="row text-center">
+            <div class="col-12">
+                <h3 style="color: #333; font-size: 1.5rem; font-weight: bold; margin-bottom: 20px;">
+                    ¿Interesado en la Carrera?
+                </h3>
+                <p style="color: #666; font-size: 1rem; margin-bottom: 30px;">
+                    Conoce más sobre nuestro programa y cómo puedes formar parte de nuestro equipo de ingenieros
+                </p>
+                
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#tm-section-6" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 35px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s; display: inline-block;"
+                       onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 20px rgba(102, 126, 234, 0.4)';"
+                       onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+                        <i class="fa fa-envelope"></i> Solicitar Información
+                    </a>
+                    
+                    <a href="https://wa.me/59167112227?text=Hola,%20me%20gustaría%20información%20sobre%20la%20carrera%20de%20Ingeniería%20Electrónica" target="_blank" style="background: #25D366; color: white; padding: 12px 35px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s; display: inline-block;"
+                       onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 20px rgba(37, 211, 102, 0.4)';"
+                       onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+                        <i class="fa fa-whatsapp"></i> Contactar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        <!-- SECCIÓN DE DESARROLLADORES -->
+        <div class="developers-section" id="tm-section-4">
+            <div class="developers-title">
+                <h2>👨‍💻 Equipo de Desarrollo</h2>
+                <p>Conoce a los desarrolladores detrás de este proyecto</p>
+            </div>
+
+            <div class="developers-grid">
+                <!-- ISMAEL -->
+                <div class="developer-card">
+                    <div class="developer-avatar">👨‍💼</div>
+                    <div class="developer-info">
+                        <div>
+                            <div class="developer-name">Ismael</div>
+                            <div class="developer-role">Desarrollador Full Stack</div>
+                            <div class="developer-description">
+                                Especialista en desarrollo web con experiencia en frontend y backend. Apasionado por crear soluciones innovadoras.
+                            </div>
+                            <div class="developer-skills">
+                                <span class="skill-tag">HTML/CSS</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">PHP</span>
+                                <span class="skill-tag">MySQL</span>
+                            </div>
+                        </div>
+
+                        <div class="developer-contact">
+                            <a href="https://wa.me/59172508696?text=Hola%20Ismael" target="_blank" class="contact-icon whatsapp" title="WhatsApp">
+                                <i class="fa fa-whatsapp"></i>
+                            </a>
+                            <a href="mailto:ismael.d.orellana.vasquez@gmail.com" class="contact-icon email" title="Email">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" class="contact-icon linkedin" title="LinkedIn">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </div>
+
+                        <a href="cvIsmael.html" class="cv-button" target="_blank">Ver CV</a>
+                    </div>
+                </div>
+
+                <!-- MELISA -->
+                <div class="developer-card">
+                    <div class="developer-avatar">👩‍💼</div>
+                    <div class="developer-info">
+                        <div>
+                            <div class="developer-name">Melisa</div>
+                            <div class="developer-role">Ingeniera en Sistemas</div>
+                            <div class="developer-description">
+                                Especialista en diseño de interfaces intuitivas y atractivas. Enfocada en experiencia del usuario y responsividad.
+                            </div>
+                            <div class="developer-skills">
+                                <span class="skill-tag">UI Design</span>
+                                <span class="skill-tag">UX Research</span>
+                                <span class="skill-tag">Figma</span>
+                                <span class="skill-tag">CSS Grid</span>
+                            </div>
+                        </div>
+
+                        <div class="developer-contact">
+                            <a href="https://wa.me/59167112227?text=Hola%20Melisa" target="_blank" class="contact-icon whatsapp" title="WhatsApp">
+                                <i class="fa fa-whatsapp"></i>
+                            </a>
+                            <a href="mailto:melisaaruquipa@gmail.com" class="contact-icon email" title="Email">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/aruquipa-mamani-melisa-alizon-69a766390" target="_blank" class="contact-icon linkedin" title="LinkedIn">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </div>
+
+                        <a href="cvMelisa.html" class="cv-button" target="_blank">Ver CV</a>
+                    </div>
+                </div>
+
+                <!-- GUSTAVO -->
+                <div class="developer-card">
+                    <div class="developer-avatar">👨‍🔧</div>
+                    <div class="developer-info">
+                        <div>
+                            <div class="developer-name">Gustavo</div>
+                            <div class="developer-role">Ingeniero de Sistemas</div>
+                            <div class="developer-description">
+                                Especialista en arquitectura de sistemas y optimización de rendimiento. Experto en gestión de bases de datos.
+                            </div>
+                            <div class="developer-skills">
+                                <span class="skill-tag">Backend</span>
+                                <span class="skill-tag">Bases de Datos</span>
+                                <span class="skill-tag">APIs REST</span>
+                                <span class="skill-tag">DevOps</span>
+                            </div>
+                        </div>
+
+                        <div class="developer-contact">
+                            <a href="https://wa.me/59177233708?text=Hola%20Gustavo" target="_blank" class="contact-icon whatsapp" title="WhatsApp">
+                                <i class="fa fa-whatsapp"></i>
+                            </a>
+                            <a href="mailto:gustavo@correo.com" class="contact-icon email" title="Email">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" class="contact-icon linkedin" title="LinkedIn">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </div>
+
+                        <a href="cvGustavo.html" class="cv-button" target="_blank">Ver CV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- SECCIÓN BLOG -->
+    <div class="tm-section tm-section-pad" id="tm-section-5" style="background: #f8f9fa; padding: 60px 20px;">
+        <div class="container">
+            <div class="row text-center" style="margin-bottom: 50px;">
+                <div class="col-12">
+                    <h2 class="tm-section-title" style="color: #667eea; font-size: 2.5rem; margin-bottom: 15px;">
+                        📰 Blog y Noticias
+                    </h2>
+                    <p style="color: #666; font-size: 1.1rem;">
+                        Últimas publicaciones sobre tecnología e ingeniería electrónica
+                    </p>
+                </div>
+            </div>
+
+            <!-- GRID DE ARTÍCULOS -->
+            <div class="row">
+                <!-- ARTÍCULO 1 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s; height: 100%; display: flex; flex-direction: column;"
+                        onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)';"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.1)';">
+                        
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 60px;">
+                            ⚡
+                        </div>
+                        
+                        <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
+                            <div style="color: #667eea; font-size: 0.85rem; font-weight: 600; margin-bottom: 10px;">
+                                <i class="fa fa-calendar"></i> 15 de Diciembre, 2024
+                            </div>
+                            
+                            <h3 style="color: #333; font-size: 1.3rem; font-weight: bold; margin-bottom: 12px;">
+                                Avances en Energías Renovables
+                            </h3>
+                            
+                            <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px; flex-grow: 1;">
+                                Descubre cómo la ingeniería electrónica está revolucionando el aprovechamiento de energías renovables y su impacto en el futuro sostenible.
+                            </p>
+                            
+                            <a href="#" style="color: #667eea; font-weight: 600; text-decoration: none; transition: all 0.3s; display: inline-block;"
+                            onmouseover="this.style.marginLeft='5px';"
+                            onmouseout="this.style.marginLeft='0';">
+                                Leer más <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ARTÍCULO 2 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s; height: 100%; display: flex; flex-direction: column;"
+                        onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)';"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.1)';">
+                        
+                        <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 60px;">
+                            🤖
+                        </div>
+                        
+                        <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
+                            <div style="color: #f5576c; font-size: 0.85rem; font-weight: 600; margin-bottom: 10px;">
+                                <i class="fa fa-calendar"></i> 12 de Diciembre, 2024
+                            </div>
+                            
+                            <h3 style="color: #333; font-size: 1.3rem; font-weight: bold; margin-bottom: 12px;">
+                                Automatización con Microcontroladores
+                            </h3>
+                            
+                            <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px; flex-grow: 1;">
+                                Aprende cómo los microcontroladores están transformando la automatización industrial y los dispositivos inteligentes del presente.
+                            </p>
+                            
+                            <a href="#" style="color: #f5576c; font-weight: 600; text-decoration: none; transition: all 0.3s; display: inline-block;"
+                            onmouseover="this.style.marginLeft='5px';"
+                            onmouseout="this.style.marginLeft='0';">
+                                Leer más <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ARTÍCULO 3 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s; height: 100%; display: flex; flex-direction: column;"
+                        onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)';"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.1)';">
+                        
+                        <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 60px;">
+                            🔬
+                        </div>
+                        
+                        <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
+                            <div style="color: #00f2fe; font-size: 0.85rem; font-weight: 600; margin-bottom: 10px;">
+                                <i class="fa fa-calendar"></i> 08 de Diciembre, 2024
+                            </div>
+                            
+                            <h3 style="color: #333; font-size: 1.3rem; font-weight: bold; margin-bottom: 12px;">
+                                IoT: Conectando el Futuro
+                            </h3>
+                            
+                            <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px; flex-grow: 1;">
+                                Explora cómo el Internet de las Cosas está conectando dispositivos y creando un ecosistema inteligente e interconectado.
+                            </p>
+                            
+                            <a href="#" style="color: #00f2fe; font-weight: 600; text-decoration: none; transition: all 0.3s; display: inline-block;"
+                            onmouseover="this.style.marginLeft='5px';"
+                            onmouseout="this.style.marginLeft='0';">
+                                Leer más <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ARTÍCULO 4 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s; height: 100%; display: flex; flex-direction: column;"
+                        onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)';"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.1)';">
+                        
+                        <div style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 60px;">
+                            💡
+                        </div>
+                        
+                        <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
+                            <div style="color: #fa709a; font-size: 0.85rem; font-weight: 600; margin-bottom: 10px;">
+                                <i class="fa fa-calendar"></i> 05 de Diciembre, 2024
+                            </div>
+                            
+                            <h3 style="color: #333; font-size: 1.3rem; font-weight: bold; margin-bottom: 12px;">
+                                Eficiencia Energética Digital
+                            </h3>
+                            
+                            <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px; flex-grow: 1;">
+                                Conoce las tecnologías que reducen el consumo energético en sistemas digitales y contribuyen a un planeta más sostenible.
+                            </p>
+                            
+                            <a href="#" style="color: #fa709a; font-weight: 600; text-decoration: none; transition: all 0.3s; display: inline-block;"
+                            onmouseover="this.style.marginLeft='5px';"
+                            onmouseout="this.style.marginLeft='0';">
+                                Leer más <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ARTÍCULO 5 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s; height: 100%; display: flex; flex-direction: column;"
+                        onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)';"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.1)';">
+                        
+                        <div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 60px;">
+                            🌐
+                        </div>
+                        
+                        <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
+                            <div style="color: #a8edea; font-size: 0.85rem; font-weight: 600; margin-bottom: 10px;">
+                                <i class="fa fa-calendar"></i> 01 de Diciembre, 2024
+                            </div>
+                            
+                            <h3 style="color: #333; font-size: 1.3rem; font-weight: bold; margin-bottom: 12px;">
+                                Comunicaciones 5G y Más Allá
+                            </h3>
+                            
+                            <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px; flex-grow: 1;">
+                                Descubre cómo las nuevas tecnologías de comunicación 5G y 6G están cambiando la forma en que nos conectamos.
+                            </p>
+                            
+                            <a href="#" style="color: #a8edea; font-weight: 600; text-decoration: none; transition: all 0.3s; display: inline-block;"
+                            onmouseover="this.style.marginLeft='5px';"
+                            onmouseout="this.style.marginLeft='0';">
+                                Leer más <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ARTÍCULO 6 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s; height: 100%; display: flex; flex-direction: column;"
+                        onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)';"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.1)';">
+                        
+                        <div style="background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 60px;">
+                            🔐
+                        </div>
+                        
+                        <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
+                            <div style="color: #ff6a88; font-size: 0.85rem; font-weight: 600; margin-bottom: 10px;">
+                                <i class="fa fa-calendar"></i> 28 de Noviembre, 2024
+                            </div>
+                            
+                            <h3 style="color: #333; font-size: 1.3rem; font-weight: bold; margin-bottom: 12px;">
+                                Ciberseguridad en Sistemas Embebidos
+                            </h3>
+                            
+                            <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px; flex-grow: 1;">
+                                Aprende cómo proteger sistemas embebidos y electrónicos contra amenazas cibernéticas en constante evolución.
+                            </p>
+                            
+                            <a href="#" style="color: #ff6a88; font-weight: 600; text-decoration: none; transition: all 0.3s; display: inline-block;"
+                            onmouseover="this.style.marginLeft='5px';"
+                            onmouseout="this.style.marginLeft='0';">
+                                Leer más <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOTÓN VER MÁS -->
+            <div class="row" style="margin-top: 50px;">
+                <div class="col-12 text-center">
+                    <a href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s; display: inline-block;"
+                    onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 20px rgba(102, 126, 234, 0.4)';"
+                    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+                        <i class="fa fa-arrow-right"></i> Ver Todos los Artículos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- SECCIÓN CONTACTO -->
         <div class="tm-section tm-section-pad tm-bg-img tm-position-relative" id="tm-section-6">
             <div class="container ie-h-align-center-fix">
                 <div class="row">
@@ -476,7 +1248,7 @@
             <div class="container">
                 <div class="row">
                     <p class="col-sm-12 text-center tm-font-light tm-color-white p-4 tm-margin-b-0">
-                    Copyright &copy; <span class="tm-current-year">2024</span> Ingeniería Electrónica
+                    Copyright &copy; <span class="tm-current-year">2024</span> Ingeniería Electrónica UMSS
                     - Diseño: <a rel="nofollow" href="https://www.tooplate.com" class="tm-color-primary tm-font-normal" target="_parent">Tooplate</a></p>
                 </div>
             </div>
@@ -484,7 +1256,7 @@
     </div>
 
     <!-- BOTÓN WHATSAPP -->
-    <a href="https://wa.me/59170000000?text=Hola,%20me%20gustaría%20obtener%20más%20información" class="whatsapp-btn" target="_blank" title="Contactanos por WhatsApp">
+    <a href="https://wa.me/59167112227?text=Hola,%20me%20gustaría%20obtener%20más%20información" class="whatsapp-btn" target="_blank" title="Contactanos por WhatsApp">
         <span class="whatsapp-tooltip">¡Contáctanos!</span>
         <i class="fa fa-whatsapp"></i>
     </a>
@@ -519,27 +1291,22 @@
         // CONTADOR REGRESIVO (COUNTDOWN)
         // ========================================
         function updateCountdown() {
-            // Fecha de finalización: 31 de diciembre de 2025
             const endDate = new Date('2025-12-31T23:59:59').getTime();
             
-            // Función que se ejecuta cada segundo
             const countdownInterval = setInterval(function() {
                 const now = new Date().getTime();
                 const distance = endDate - now;
 
-                // Calcular unidades de tiempo
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                // Actualizar elementos
                 document.getElementById('days').textContent = days.toString().padStart(2, '0');
                 document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
                 document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
                 document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
 
-                // Si cuenta regresiva termina
                 if (distance < 0) {
                     clearInterval(countdownInterval);
                     document.getElementById('days').textContent = '00';
@@ -583,62 +1350,12 @@
 
             showSlide(0);
 
-            // Auto-play cada 5 segundos
             setInterval(() => {
                 showSlide(currentSlide + 1);
             }, 5000);
         }
 
-        // ========================================
-        // MAPA DE GOOGLE
-        // ========================================
-        var map = '';
-        var center;
-
-        function initialize() {
-            var mapOptions = {
-                zoom: 13,
-                center: new google.maps.LatLng(-17.393889, -66.156667), // La Paz, Bolivia
-                scrollwheel: false
-            };
-
-            map = new google.maps.Map(document.getElementById('google-map'), mapOptions);
-
-            google.maps.event.addDomListener(map, 'idle', function() {
-                calculateCenter();
-            });
-
-            google.maps.event.addDomListener(window, 'resize', function() {
-                map.setCenter(center);
-            });
-        }
-
-        function calculateCenter() {
-            center = map.getCenter();
-        }
-
-        function loadGoogleMap(){
-            var script = document.createElement('script');
-            script.type = 'text/javascript';
-            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDVWt4rJfibfsEDvcuaChUaZRS5NXey1Cs&v=3.exp&sensor=false&callback=initialize';
-            document.body.appendChild(script);
-        }
-
-        function setPageNav(){
-            if($(window).width() > 991) {
-                $('#tm-top-bar').singlePageNav({
-                    currentClass:'active',
-                    offset: 79
-                });
-            }
-            else {
-                $('#tm-top-bar').singlePageNav({
-                    currentClass:'active',
-                    offset: 65
-                });
-            }
-        }
-
+      
         // ========================================
         // DOCUMENTO LISTO
         // ========================================
@@ -652,16 +1369,9 @@
                 }
             });
 
-            // Inicializar contador de visitas
             updateVisitCounter();
-
-            // Inicializar contador regresivo
             updateCountdown();
-
-            // Google Map
             loadGoogleMap();
-
-            // Slider
             setCarousel();
             setPageNav();
 
@@ -670,16 +1380,11 @@
                 setPageNav();
             });
 
-            // Cerrar menú al hacer clic
             $('.nav-link').click(function(){
                 $('#mainNav').removeClass('show');
             });
 
-            // Actualizar año
             $('.tm-current-year').text(new Date().getFullYear());
         });
 
     </script>
-
-</body>
-</html>
