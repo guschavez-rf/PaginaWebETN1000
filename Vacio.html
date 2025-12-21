@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Level HTML Template by Tooplate - Empty Template</title>
+    <title>Ingeniería Electrónica - UMSS</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
@@ -15,7 +15,274 @@
     <link rel="stylesheet" type="text/css" href="css/datepicker.css"/>
     <link rel="stylesheet" href="css/tooplate-style.css">
 
-    </head>
+    <style>
+        /* ===== CONTADOR DE VISITAS ===== */
+        .visitor-counter {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            margin: 20px auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .counter-label {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .counter-number {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 15px 0;
+            font-family: 'Open Sans', sans-serif;
+            animation: pulse 0.5s ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .counter-description {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-top: 15px;
+        }
+
+        .reset-counter {
+            margin-top: 15px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: background 0.3s;
+        }
+
+        .reset-counter:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* ===== CONTADOR REGRESIVO ===== */
+        .countdown-container {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 500px;
+            margin: 20px auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .countdown-label {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .countdown-boxes {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .countdown-box {
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .countdown-value {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .countdown-label-small {
+            font-size: 12px;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .countdown-description {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* ===== BOTÓN WHATSAPP ===== */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            z-index: 999;
+        }
+
+        .whatsapp-btn:hover {
+            background: #20BA5A;
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+        }
+
+        .whatsapp-tooltip {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            background: #25D366;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .whatsapp-btn:hover .whatsapp-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ===== SLIDER ===== */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 3px;
+            background-color: rgba(0,0,0,0.5);
+            user-select: none;
+            z-index: 10;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .dots {
+            text-align: center;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .dot.active {
+            background-color: white;
+        }
+
+        .dot:hover {
+            background-color: rgba(255,255,255,0.8);
+        }
+
+        /* ===== CONTENEDOR FLEX ===== */
+        .counters-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px 20px;
+        }
+
+        @media (max-width: 768px) {
+            .countdown-boxes {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .whatsapp-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 26px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .countdown-value {
+                font-size: 28px;
+            }
+
+            .counter-number {
+                font-size: 36px;
+            }
+        }
+    </style>
+
+</head>
 
 <body>
     <div class="tm-main-content" id="top">
@@ -23,7 +290,6 @@
         <div class="tm-top-bar" id="tm-top-bar">
             <div class="container">
                 <div class="row">
-
                     <nav class="navbar navbar-expand-lg narbar-light">
                         <a class="navbar-brand mr-auto" href="#">
                             <img src="img/logo.png" alt="Site logo">
@@ -47,10 +313,10 @@
                                 <a class="nav-link" href="#tm-section-4">Portfolio</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#tm-section-5">Blog Entries</a>
+                                <a class="nav-link" href="#tm-section-5">Blog</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#tm-section-6">Contact Us</a>
+                                <a class="nav-link" href="#tm-section-6">Contact</a>
                               </li>
                             </ul>
                         </div>
@@ -59,58 +325,86 @@
             </div>
         </div>
 
-<!--        <div class="tm-section tm-bg-img" id="tm-section-1" style="min-height: 515px;">
+        <!-- SLIDER CON TÍTULO -->
+        <div class="tm-section tm-bg-img" id="tm-section-1" style="min-height: 515px;">
             <div class="overlay">
                 <h1 class="tm-section-title tm-color-white">INGENIERIA ELECTRONICA</h1>
             </div>
-        </div>
--->
-  <div class="tm-section tm-bg-img" id="tm-section-1" style="min-height: 515px;">
-    <!-- Overlay con el título -->
-    <div class="overlay">
-        <h1 class="tm-section-title tm-color-white">INGENIERIA ELECTRONICA</h1>
-    </div>
 
-    <!-- Slider de imágenes -->
-    <div id="slider" class="slider-container">
-        <div class="slide active">
-            <img src="SlidersVacio/Slider1.jpg" alt="Imagen 1">
-        </div>
-        <div class="slide">
-            <img src="SlidersVacio/Slider2.jpg" alt="Imagen 2">
-        </div>
-        <div class="slide">
-            <img src="SlidersVacio/Slider3.jpg" alt="Imagen 3">
-        </div>
-        <div class="slide">
-            <img src="SlidersVacio/Slider4.jpg" alt="Imagen 4">
+            <div id="slider" class="slider-container">
+                <div class="slide active">
+                    <img src="SlidersVacio/Slider1.jpg" alt="Imagen 1">
+                </div>
+                <div class="slide">
+                    <img src="SlidersVacio/Slider2.jpg" alt="Imagen 2">
+                </div>
+                <div class="slide">
+                    <img src="SlidersVacio/Slider3.jpg" alt="Imagen 3">
+                </div>
+                <div class="slide">
+                    <img src="SlidersVacio/Slider4.jpg" alt="Imagen 4">
+                </div>
+
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+
+                <div class="dots">
+                    <span class="dot active" onclick="setSlide(0)"></span>
+                    <span class="dot" onclick="setSlide(1)"></span>
+                    <span class="dot" onclick="setSlide(2)"></span>
+                    <span class="dot" onclick="setSlide(3)"></span>
+                </div>
+            </div>
         </div>
 
-        <!-- Controles -->
-        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-        <button class="next" onclick="changeSlide(1)">&#10095;</button>
-
-        <!-- Indicadores -->
-        <div class="dots">
-            <span class="dot active" onclick="setSlide(0)"></span>
-            <span class="dot" onclick="setSlide(1)"></span>
-            <span class="dot" onclick="setSlide(2)"></span>
-            <span class="dot" onclick="setSlide(3)"></span>
-        </div>
-    </div>
-</div>
-<!------------------------------------------------------------------------------------------>
+        <!-- SECCIÓN CON CONTADOR Y COUNTDOWN -->
         <div class="tm-section-2" id="tm-section-2">
             <div class="container">
                 <div class="row">
-                    <div class="col text-center" style="padding-top: 50px; padding-bottom: 50px;">
-                        <h2 class="tm-section-title">INGENIERIA ELECTRONICA</h2>
-                        <p class="tm-color-white tm-section-subtitle">Add your content here</p>
+                    <div class="col text-center" style="padding-top: 30px; padding-bottom: 30px;">
+                        <h2 class="tm-section-title">SISTEMAS Y HERRAMIENTAS</h2>
+                        <p class="tm-color-white tm-section-subtitle">Monitoreo del Sitio Web y Datos del Curso</p>
+                        
+                        <!-- CONTENEDOR FLEX PARA LOS CONTADORES -->
+                        <div class="counters-container">
+                            <!-- CONTADOR DE VISITAS -->
+                            <div class="visitor-counter">
+                                <div class="counter-label">👥 Contador de Visitas</div>
+                                <div class="counter-number" id="visitCount">0</div>
+                                <div class="counter-description">personas han visitado esta página</div>
+                                <button class="reset-counter" onclick="resetCounter()">🔄 Reiniciar</button>
+                            </div>
+
+                            <!-- CONTADOR REGRESIVO -->
+                            <div class="countdown-container">
+                                <div class="countdown-label">⏰ Cierre del Curso</div>
+                                <div class="countdown-boxes">
+                                    <div class="countdown-box">
+                                        <div class="countdown-value" id="days">0</div>
+                                        <div class="countdown-label-small">Días</div>
+                                    </div>
+                                    <div class="countdown-box">
+                                        <div class="countdown-value" id="hours">0</div>
+                                        <div class="countdown-label-small">Horas</div>
+                                    </div>
+                                    <div class="countdown-box">
+                                        <div class="countdown-value" id="minutes">0</div>
+                                        <div class="countdown-label-small">Minutos</div>
+                                    </div>
+                                    <div class="countdown-box">
+                                        <div class="countdown-value" id="seconds">0</div>
+                                        <div class="countdown-label-small">Segundos</div>
+                                    </div>
+                                </div>
+                                <div class="countdown-description">Tiempo restante hasta: 31 de Diciembre, 2025</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- SECCIONES RESTANTES -->
         <div class="tm-section tm-position-relative" id="tm-section-3">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" class="tm-section-down-arrow">
                 <polygon fill="#ee5057" points="0,0  100,0  50,60"></polygon>
@@ -118,8 +412,8 @@
             <div class="container tm-pt-5 tm-pb-4">
                 <div class="row text-center" style="min-height: 250px;">
                     <div class="col-12">
-                        <h2 class="tm-color-primary">Empty Section 3</h2>
-                        <p>Add your main articles here.</p>
+                        <h2 class="tm-color-primary">Sección de Contenido</h2>
+                        <p>Agrega tus artículos principales aquí</p>
                     </div>
                 </div>
             </div>
@@ -129,8 +423,8 @@
             <div class="container">
                 <div class="row" style="min-height: 250px;">
                     <div class="col-12 text-center">
-                        <h2>Empty Portfolio Section (Section 4)</h2>
-                        <p>Carousel and sidebar content goes here.</p>
+                        <h2>Portafolio</h2>
+                        <p>Tus proyectos y trabajos realizados</p>
                     </div>
                 </div>
             </div>
@@ -141,8 +435,8 @@
                 <div class="container ie-h-align-center-fix">
                     <div class="row tm-flex-align-center" style="min-height: 450px;">
                         <div class="col-12 text-center">
-                            <h2 class="text-uppercase tm-section-title-2 tm-color-white">Empty Blog Section (Section 5)</h2>
-                            <h3 class="tm-color-primary tm-font-semibold tm-section-subtitle-2">Media objects go here</h3>
+                            <h2 class="text-uppercase tm-section-title-2 tm-color-white">Blog y Noticias</h2>
+                            <h3 class="tm-color-primary tm-font-semibold tm-section-subtitle-2">Últimas publicaciones</h3>
                         </div>
                     </div>
                 </div>
@@ -159,18 +453,18 @@
                         <div class="tm-bg-white tm-p-4">
                             <form action="index.html" method="post" class="contact-form">
                                 <div class="form-group">
-                                    <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name"  required/>
+                                    <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Nombre" required/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Email"  required/>
+                                    <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Email" required/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" id="contact_subject" name="contact_subject" class="form-control" placeholder="Subject"  required/>
+                                    <input type="text" id="contact_subject" name="contact_subject" class="form-control" placeholder="Asunto" required/>
                                 </div>
                                 <div class="form-group">
-                                    <textarea id="contact_message" name="contact_message" class="form-control" rows="9" placeholder="Message" required></textarea>
+                                    <textarea id="contact_message" name="contact_message" class="form-control" rows="9" placeholder="Mensaje" required></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary tm-btn-primary">Send Message Now</button>
+                                <button type="submit" class="btn btn-primary tm-btn-primary">Enviar Mensaje</button>
                             </form>
                         </div>
                     </div>
@@ -182,42 +476,141 @@
             <div class="container">
                 <div class="row">
                     <p class="col-sm-12 text-center tm-font-light tm-color-white p-4 tm-margin-b-0">
-                    Copyright &copy; <span class="tm-current-year">2018</span> Your Company
-
-                    - Design: <a rel="nofollow" href="https://www.tooplate.com" class="tm-color-primary tm-font-normal" target="_parent">Tooplate</a></p>
+                    Copyright &copy; <span class="tm-current-year">2024</span> Ingeniería Electrónica
+                    - Diseño: <a rel="nofollow" href="https://www.tooplate.com" class="tm-color-primary tm-font-normal" target="_parent">Tooplate</a></p>
                 </div>
             </div>
         </footer>
     </div>
 
+    <!-- BOTÓN WHATSAPP -->
+    <a href="https://wa.me/59170000000?text=Hola,%20me%20gustaría%20obtener%20más%20información" class="whatsapp-btn" target="_blank" title="Contactanos por WhatsApp">
+        <span class="whatsapp-tooltip">¡Contáctanos!</span>
+        <i class="fa fa-whatsapp"></i>
+    </a>
+
+    <!-- SCRIPTS -->
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/datepicker.min.js"></script>
     <script src="js/jquery.singlePageNav.min.js"></script>
     <script src="slick/slick.min.js"></script>
+
     <script>
-        /* Google map
-        ------------------------------------------------*/
+        // ========================================
+        // CONTADOR DE VISITAS
+        // ========================================
+        function updateVisitCounter() {
+            let visits = localStorage.getItem('visitCount');
+            visits = visits ? parseInt(visits) + 1 : 1;
+            localStorage.setItem('visitCount', visits);
+            document.getElementById('visitCount').textContent = visits;
+        }
+
+        function resetCounter() {
+            if(confirm('¿Estás seguro de que deseas reiniciar el contador?')) {
+                localStorage.setItem('visitCount', '0');
+                document.getElementById('visitCount').textContent = '0';
+            }
+        }
+
+        // ========================================
+        // CONTADOR REGRESIVO (COUNTDOWN)
+        // ========================================
+        function updateCountdown() {
+            // Fecha de finalización: 31 de diciembre de 2025
+            const endDate = new Date('2025-12-31T23:59:59').getTime();
+            
+            // Función que se ejecuta cada segundo
+            const countdownInterval = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = endDate - now;
+
+                // Calcular unidades de tiempo
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Actualizar elementos
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+                // Si cuenta regresiva termina
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById('days').textContent = '00';
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                    alert('¡El curso ha finalizado!');
+                }
+            }, 1000);
+        }
+
+        // ========================================
+        // SLIDER
+        // ========================================
+        function setCarousel() {
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('#slider .slide');
+            const dots = document.querySelectorAll('#slider .dot');
+
+            function showSlide(index) {
+                if (index < 0) index = slides.length - 1;
+                if (index >= slides.length) index = 0;
+                currentSlide = index;
+
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === currentSlide);
+                });
+
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentSlide);
+                });
+            }
+
+            window.changeSlide = function(step) {
+                showSlide(currentSlide + step);
+            };
+
+            window.setSlide = function(index) {
+                showSlide(index);
+            };
+
+            showSlide(0);
+
+            // Auto-play cada 5 segundos
+            setInterval(() => {
+                showSlide(currentSlide + 1);
+            }, 5000);
+        }
+
+        // ========================================
+        // MAPA DE GOOGLE
+        // ========================================
         var map = '';
         var center;
 
         function initialize() {
             var mapOptions = {
                 zoom: 13,
-                center: new google.maps.LatLng(-23.013104,-43.394365),
+                center: new google.maps.LatLng(-17.393889, -66.156667), // La Paz, Bolivia
                 scrollwheel: false
             };
 
-            map = new google.maps.Map(document.getElementById('google-map'),  mapOptions);
+            map = new google.maps.Map(document.getElementById('google-map'), mapOptions);
 
             google.maps.event.addDomListener(map, 'idle', function() {
-              calculateCenter();
-          });
+                calculateCenter();
+            });
 
             google.maps.event.addDomListener(window, 'resize', function() {
-              map.setCenter(center);
-          });
+                map.setCenter(center);
+            });
         }
 
         function calculateCenter() {
@@ -227,49 +620,10 @@
         function loadGoogleMap(){
             var script = document.createElement('script');
             script.type = 'text/javascript';
-            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDVWt4rJfibfsEDvcuaChUaZRS5NXey1Cs&v=3.exp&sensor=false&' + 'callback=initialize';
+            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDVWt4rJfibfsEDvcuaChUaZRS5NXey1Cs&v=3.exp&sensor=false&callback=initialize';
             document.body.appendChild(script);
         }
-// ------------------------------------------------------------------
-//  Slider Ismael
-//---------------------------------------------------------------------
-  function setCarousel() {
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('#slider .slide');
-    const dots = document.querySelectorAll('#slider .dot');
 
-    function showSlide(index) {
-        if (index < 0) index = slides.length - 1;
-        if (index >= slides.length) index = 0;
-        currentSlide = index;
-
-        slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === currentSlide);
-        });
-
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === currentSlide);
-        });
-    }
-
-    // Hacer accesibles las funciones desde HTML
-    window.changeSlide = function(step) {
-        showSlide(currentSlide + step);
-    };
-
-    window.setSlide = function(index) {
-        showSlide(index);
-    };
-
-    // Mostrar la primera diapositiva
-    showSlide(0);
-
-    // Auto‑play opcional
-    setInterval(() => {
-        showSlide(currentSlide + 1);
-    }, 5000);
-}
-// Fin Slider --------------------------------------------------------
         function setPageNav(){
             if($(window).width() > 991) {
                 $('#tm-top-bar').singlePageNav({
@@ -285,10 +639,9 @@
             }
         }
 
-        function togglePlayPause() {
-            // Original video logic removed to empty template.
-        }
-
+        // ========================================
+        // DOCUMENTO LISTO
+        // ========================================
         $(document).ready(function(){
 
             $(window).on("scroll", function() {
@@ -299,32 +652,30 @@
                 }
             });
 
+            // Inicializar contador de visitas
+            updateVisitCounter();
+
+            // Inicializar contador regresivo
+            updateCountdown();
+
             // Google Map
             loadGoogleMap();
 
-            // Date Picker (Logic removed as form is empty, keeping variables just in case)
-            // const pickerCheckIn = datepicker('#inputCheckIn');
-            // const pickerCheckOut = datepicker('#inputCheckOut');
-
-            // Slick carousel (Function call kept, but content is empty)
+            // Slider
             setCarousel();
             setPageNav();
 
             $(window).resize(function() {
-              setCarousel();
-              setPageNav();
+                setCarousel();
+                setPageNav();
             });
 
-            // Close navbar after clicked
+            // Cerrar menú al hacer clic
             $('.nav-link').click(function(){
                 $('#mainNav').removeClass('show');
             });
 
-            // Control video (Logic removed)
-            // $('.tm-btn-play').click(function() { togglePlayPause(); });
-            // $('.tm-btn-pause').click(function() { togglePlayPause(); });
-
-            // Update the current year in copyright
+            // Actualizar año
             $('.tm-current-year').text(new Date().getFullYear());
         });
 
