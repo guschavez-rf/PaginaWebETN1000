@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Base de Datos II2025 - UMSA</title>
+    <title>Ingeniería Electrónica - UMSS</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
@@ -14,7 +14,6 @@
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <link rel="stylesheet" type="text/css" href="css/datepicker.css"/>
     <link rel="stylesheet" href="css/tooplate-style.css">
-
 <!-- ESTILOS RESPONSIVOS -->
 <style>
     @media (max-width: 768px) {
@@ -44,39 +43,6 @@
         [style*="padding: 30px"] {
             padding: 20px !important;
         }
-    }
-</style>
-<style>
-    /* ===== CORRECCIÓN PARA LEAFLET ===== */
-    #google-map {
-        width: 100%;
-        height: 400px;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-        z-index: 1;
-        position: relative;
-    }
-    
-    /* Forzar que los tiles se muestren correctamente */
-    .leaflet-container {
-        height: 100%;
-        width: 100%;
-        position: relative;
-    }
-    
-    .leaflet-tile-container {
-        position: absolute;
-    }
-    
-    .leaflet-tile {
-        position: absolute;
-        width: 256px !important;
-        height: 256px !important;
-    }
-    
-    /* Asegurar que el popup se vea correctamente */
-    .leaflet-popup-content-wrapper {
-        border-radius: 8px;
     }
 </style>
     <style>
@@ -604,7 +570,7 @@
                     <nav class="navbar navbar-expand-lg narbar-light">
                         <a class="navbar-brand mr-auto" href="#">
                             <img src="img/logo.png" alt="Site logo">
-                            Base de Datos
+                            Level
                         </a>
                         <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -634,95 +600,6 @@
                     </nav>
                 </div>
             </div>
-
-            <div class="tm-bg-video">
-                <div class="overlay">
-                    <i class="fa fa-5x fa-play-circle tm-btn-play"></i>
-                    <i class="fa fa-5x fa-pause-circle tm-btn-pause"></i>
-                </div>
-                <video controls="" loop="" class="tmVideo">
-                    <source src="videos/video.mp4" type="video/mp4">
-                    <source src="videos/video.ogg" type="video/ogg">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="tm-section tm-section-pad tm-bg-img" id="tm-section-5">                                                        
-                    <div class="container ie-h-align-center-fix">
-                        <div class="row tm-flex-align-center">
-                            <div class="col-xs-12 col-md-12 col-lg-3 col-xl-3 tm-media-title-container">
-                                <h2 class="text-uppercase tm-section-title-2">ASIA</h2>
-                                <h3 class="tm-color-primary tm-font-semibold tm-section-subtitle-2">Singapore</h3>
-                            </div>
-                            <div class="col-xs-12 col-md-12 col-lg-9 col-xl-9 mt-0 mt-sm-3">
-                                <div class="ml-auto tm-bg-white-shadow tm-pad tm-media-container">
-                                    <article class="media tm-margin-b-20 tm-media-1">
-                                        <img src="img/img-03.jpg" alt="Image">
-                                        <div class="media-body tm-media-body-1 tm-media-body-v-center">
-                                            <h3 class="tm-font-semibold tm-color-primary tm-article-title-3">Suspendisse vel est libero sem phasellus ac laoreet</h3>
-                                            <p>Vivamus eget tellus ornare, sollicitudin quam id, dictum nulla. Phasellus finibus rhoncus justo, tempus eleifend neque dictum ac. Aenean metus leo, consectetur non. 
-                                            <br><br>
-											Etiam aliquam arcu at mauris consectetur scelerisque. Integer elementum justo in orci facilisis ultricies. Pellentesque at velit ante. Duis scelerisque metus vel felis porttitor gravida.</p>
-                                        </div>                                
-                                    </article>
-                                    <article class="media tm-margin-b-20 tm-media-1">
-                                        <img src="img/img-04.jpg" alt="Image">
-                                        <div class="media-body tm-media-body-1 tm-media-body-v-center">
-                                            <h3 class="tm-font-semibold tm-article-title-3">Suspendisse vel est libero sem phasellus ac laoreet</h3>
-                                            <p>Duis accumsan sagittis tortor in ultrices. Praesent tortor ante, fringilla ac nibh porttitor, fermentum commodo nulla.</p>
-                                            <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Continue reading...</a>
-                                        </div>                                
-                                    </article>
-                                    <article class="media tm-margin-b-20 tm-media-1">
-                                        <img src="img/img-05.jpg" alt="Image">
-                                        <div class="media-body tm-media-body-1 tm-media-body-v-center">
-                                            <h3 class="tm-font-semibold tm-article-title-3">Faucibus dolor ligula nisl metus auctor aliquet</h3>
-                                            <p>Nunc in felis aliquet metus luctus iaculis vel et nisi. Nulla venenatis nisl orci, laoreet ultricies massa tristique id.</p>
-                                            <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Continue reading...</a>
-                                        </div>                                
-                                    </article>
-                                </div>                            
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>           
-            
-            <div class="tm-section tm-section-pad tm-bg-img tm-position-relative" id="tm-section-6">
-                <div class="container ie-h-align-center-fix">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-7">
-                            <div id="google-map"></div>        
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-5 mt-3 mt-md-0">
-                            <div class="tm-bg-white tm-p-4">
-                                <form action="index.html" method="post" class="contact-form">
-                                    <div class="form-group">
-                                        <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name"  required/>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Email"  required/>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" id="contact_subject" name="contact_subject" class="form-control" placeholder="Subject"  required/>
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea id="contact_message" name="contact_message" class="form-control" rows="9" placeholder="Message" required></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary tm-btn-primary">Send Message Now</button>
-                                </form>
-                            </div>                            
-                        </div>
-                    </div>        
-                </div>
-            </div>
-<!--Agregado-->            
-            <footer class="tm-container-outer">
-                <p class="tm-copyright-text">
-                    Copyright &copy; <span class="tm-current-year">2024</span> 
-                    Proyecto Ingeniería Electrónica 
-                    
-                    | <a href="sitemap.html" style="color: #666; text-decoration: underline;">Mapa del Sitio</a>
-                </p>
-            </footer>
         </div>
 
         <!-- SLIDER CON TÍTULO -->
@@ -1392,10 +1269,122 @@
     <script src="js/jquery.singlePageNav.min.js"></script>
     <script src="slick/slick.min.js"></script>
 
+    <script>
+        // ========================================
+        // CONTADOR DE VISITAS
+        // ========================================
+        function updateVisitCounter() {
+            let visits = localStorage.getItem('visitCount');
+            visits = visits ? parseInt(visits) + 1 : 1;
+            localStorage.setItem('visitCount', visits);
+            document.getElementById('visitCount').textContent = visits;
+        }
 
-<!-- NUEVO SCRIPT CON INTEGRACIÓN A BD -->
-<script src="js/app.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAihBdbFRgUf2Olnv5dRYGoduclQeUmnU0&callback=loadGoogleMap" async defer></script>
+        function resetCounter() {
+            if(confirm('¿Estás seguro de que deseas reiniciar el contador?')) {
+                localStorage.setItem('visitCount', '0');
+                document.getElementById('visitCount').textContent = '0';
+            }
+        }
 
-</body>
-</html>
+        // ========================================
+        // CONTADOR REGRESIVO (COUNTDOWN)
+        // ========================================
+        function updateCountdown() {
+            const endDate = new Date('2025-12-31T23:59:59').getTime();
+            
+            const countdownInterval = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = endDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById('days').textContent = '00';
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                    alert('¡El curso ha finalizado!');
+                }
+            }, 1000);
+        }
+
+        // ========================================
+        // SLIDER
+        // ========================================
+        function setCarousel() {
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('#slider .slide');
+            const dots = document.querySelectorAll('#slider .dot');
+
+            function showSlide(index) {
+                if (index < 0) index = slides.length - 1;
+                if (index >= slides.length) index = 0;
+                currentSlide = index;
+
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === currentSlide);
+                });
+
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentSlide);
+                });
+            }
+
+            window.changeSlide = function(step) {
+                showSlide(currentSlide + step);
+            };
+
+            window.setSlide = function(index) {
+                showSlide(index);
+            };
+
+            showSlide(0);
+
+            setInterval(() => {
+                showSlide(currentSlide + 1);
+            }, 5000);
+        }
+
+      
+        // ========================================
+        // DOCUMENTO LISTO
+        // ========================================
+        $(document).ready(function(){
+
+            $(window).on("scroll", function() {
+                if($(window).scrollTop() > 100) {
+                    $(".tm-top-bar").addClass("active");
+                } else {
+                   $(".tm-top-bar").removeClass("active");
+                }
+            });
+
+            updateVisitCounter();
+            updateCountdown();
+            loadGoogleMap();
+            setCarousel();
+            setPageNav();
+
+            $(window).resize(function() {
+                setCarousel();
+                setPageNav();
+            });
+
+            $('.nav-link').click(function(){
+                $('#mainNav').removeClass('show');
+            });
+
+            $('.tm-current-year').text(new Date().getFullYear());
+        });
+
+    </script>
